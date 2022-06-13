@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- only css -->
+    <link rel="stylesheet" href="estilos_examen.css">
+    <title>Examen</title>
+</head>
+<body class="bg-light bg-gradient bg-opacity-75">
+    <main class="container">
+
+        <div class="d-flex align-items-center mt-3 d-none" id="loading">
+            <strong>Loading...</strong>
+            <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+          </div>
+
+        <!-- prensentacion para realizar el examen -->
+        <section class="row justify-content-center" id="presentacion">
+            <div class="col-lg-7 mt-5">
+                <h1 class="lead text-center fs-1 fw-bold mb-4 fst-italic">Bienvenido al examen</h1>
+                <p class="lead text-center fst-italic">Este examen contara con un valor de 10 preguntas en cada sección habra un estimado de 4 casillas que seran <span class="fw-bold">A B C y D</span> la cual una sola sera la correcta</p>
+                <h2 class="lead text-center fst-italic">Recuerda seguir paso a paso las instruciones para realizar el examen con total éxito</h2>
+                <p class="lead fst-italic text-success">Lets go students</p>
+                <button class=" shadow btn btn-outline-success w-100 mt-3 fst-italic" id="boton">Realizar examen</button>
+            </div>
+        </section>
+
+        <!-- preguntas -->
+        <section class="row justify-content-center mt-3 d-none" id="preguntas">
+
+             <!-- video explicativo -->
+             <div class="col-lg-8 mb-4">
+                 <div class="ratio ratio-21x9 shadow">
+                    <iframe src="https://www.youtube.com/embed/2nOW8NtM858" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                 </div>
+             </div>
+
+             <div class="col-lg-8 my-5">
+                 <h1 class="fs-2 fw-bold fst-italic">Pregunta 1</h1>
+                 <p class="lead fst-italic">De acuerdo con el video contesta la pregunata: ¿Quien fue nikolas tesla en la historia de la humanidad?</p>
+             </div>
+
+             <div class="row justify-content-center">
+                 <div class="col-lg-8">
+                     <form id="formulario" name="form">
+                        <label>
+                            <span class="fw-bold">A</span>
+                            <input type="radio" class="form-check-input mx-2" name="pregunta" value="tesla_1">
+                            <span>Fue un importante político</span>
+                         </label>
+                         <br>
+
+                         <label>
+                            <span class="fw-bold">B</span>
+                             <input type="radio" class="form-check-input mx-2" name="pregunta" value="tesla_2">
+                             <span>Un ciudadano común</span>
+                         </label>
+                         <br>
+
+                         <label>
+                             <span class="fw-bold">C</span>
+                             <input type="radio" class="form-check-input mx-2" name="pregunta" value="tesla_3">
+                             <span>Fue un cientifico e inventor importante en los 80</span>
+                         </label>
+                         <br>
+
+                         <label>
+                             <span class="fw-bold">D</span>
+                             <input type="radio" class="form-check-input mx-2" name="pregunta" value="tesla_4">
+                             <span>Nikolas tesla solo era un un ingeniero</span>
+                         </label>
+                         <br>
+
+                         <label>
+                            <span class="fw-bold">E</span>
+                            <input type="radio" class="form-check-input mx-2" name="pregunta" value="tesla_5">
+                            <span>Todas las anteriores</span>
+                        </label>
+                        <br>
+
+                        <div class="alert alert-success mt-3 d-none">Felicidades ganaste el Examen</div>
+
+                        <button class="btn btn-outline-dark w-100 my-3 shadow" id="boton_dos">Calificar</button>
+                        </form>
+                 </div>
+             </div>
+
+            
+         </section>
+
+         <!-- Perdida del examen -->
+         <section class="row justify-content-center d-none" id="alerta_fallida">
+             <div class="col-lg-7">
+                 <div class="alert alert-danger mt-5 h-100 fst-italic shadow">
+                     <h1 class="alert-heading mx-3 my-3">Examen fallido</h1>
+                     <hr>
+                     <p class="lead mx-3 mt-4">has reprobado el examen practico te recomendamos que sigas estudiando y los vuelvas a intentar luego <span class="fw-bold lead">Suerte en la proxima sección</span></p>
+                     <hr>
+                    <svg class="mx-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-square-fill" viewBox="0 0 16 16">
+                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                  </svg>Tu respuesta fue incorrecta has perdido el Examen</div>
+             </div>
+         </section>
+
+         <!-- Examen aprobado -->
+         <section class="row justify-content-center d-none" id="alerta_acertada">
+            <div class="col-lg-7">
+                <div class="alert alert-success mt-5 h-100 fst-italic shadow">
+                    <h1 class="alert-heading mx-3 my-3">Examen aprobado</h1>
+                    <hr>
+                    <p class="lead mx-3 mt-4">Felicidades has aprobado el examen practico con éxito <span class="fw-bold lead">Te esperamos en el proximo examen practico</span></p>
+                    <hr>
+                    <svg class="mx-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                   Tu respuesta fue correcta has ganado el Examen</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- javascript -->
+    <script src="examen.js"></script>
+</body>
+</html>
